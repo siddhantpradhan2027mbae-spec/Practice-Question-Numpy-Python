@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Module 9 Practice Questions: NumPy Numerical Computing</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FFF8EC;--card:#fff;--ink:#2B2118;--mut:#6f6254;--or:#FF7A1A;--teal:#0E9F9A;--yel:#FFD23F;--pink:#FF5C8A;--grn:#3DBE7A;--line:#F0E2CC}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 Inter,sans-serif}
+.hero{background:linear-gradient(135deg,#0E9F9A,#3DBE7A);color:#fff;padding:44px 20px 36px}
+.wrap{max-width:900px;margin:0 auto}
+.hero h1{font:700 clamp(26px,5vw,40px)/1.15 Poppins,sans-serif;margin:8px 0 10px}
+.hero p{margin:0;opacity:.95;max-width:620px}.badge{display:inline-block;background:rgba(255,255,255,.22);padding:4px 12px;border-radius:99px;font:600 13px Poppins}
+.by{margin-top:14px;font-size:14px;opacity:.95}
+.bar{position:sticky;top:0;z-index:5;background:var(--cream);border-bottom:2px solid var(--line);padding:10px 20px}
+.bar .wrap{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bar a{font:600 13px Poppins;text-decoration:none;color:var(--ink);background:#fff;border:2px solid var(--line);padding:5px 12px;border-radius:99px}
+.bar a:hover{border-color:var(--or);color:var(--or)}
+.prog{margin-left:auto;font:600 13px Poppins;color:var(--teal)}
+.tip{background:#E6F8F7;border-left:5px solid var(--teal);padding:14px 18px;border-radius:10px;margin:26px 0}
+section{margin:34px 0}
+.thead{margin-bottom:16px}.tn{font:600 12px Poppins;color:var(--or);text-transform:uppercase;letter-spacing:.08em}
+h2{font:700 26px Poppins;margin:2px 0}.tsub{margin:0;color:var(--mut)}.tnote{background:#FFF1CC;border-radius:10px;padding:10px 14px;margin:12px 0 0}
+.q{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:20px 22px;margin:16px 0;box-shadow:0 4px 0 var(--line)}
+.q header{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:flex-start}
+.qt{display:flex;gap:12px;align-items:center}.qn{background:var(--ink);color:var(--yel);font:700 14px Poppins;padding:5px 11px;border-radius:10px}
+h3{font:600 18px Poppins;margin:0}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.lv{font:700 11px Poppins;padding:4px 10px;border-radius:99px;text-transform:uppercase;letter-spacing:.05em;color:#fff;background:var(--grn)}
+.lv.medium,.lv.easymedium{background:#E69500}.lv.hard,.lv.challenge{background:var(--pink)}.lv.bonus{background:var(--teal)}
+.co{font:600 12px Poppins;background:#FFF1CC;color:#8a5a00;padding:4px 10px;border-radius:99px}
+.lbl{font:600 12px Poppins;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin:14px 0 4px}.lbl.exp{color:var(--or)}
+pre{margin:0;background:#2B2118;color:#FFE9C7;padding:14px 16px;border-radius:12px;font:14px/1.6 'Fira Code',monospace;overflow-x:auto;white-space:pre-wrap}
+pre.out{background:#14332f;color:#B8F5E0}
+ol{margin:8px 0 0;padding-left:22px}
+.done{display:block;margin-top:16px;font-size:14px;color:var(--mut);cursor:pointer}
+footer{padding:30px 20px 50px;color:var(--mut);font-size:14px}
+</style></head><body>
+<div class="hero"><div class="wrap"><span class="badge">Module 9 · Numerical Computing</span>
+<h1>NumPy Practice Questions</h1>
+<p>61 questions across 9 core NumPy topics. Solve each one in your IDE/Notebook, run it, and match the expected output. Build that corporate muscle memory!</p></div></div>
+<div class="bar"><div class="wrap">
+    <a href="#t1">1. ndarray Intro</a>
+    <a href="#t2">2. Array Creation</a>
+    <a href="#t3">3. Filtering & Slicing</a>
+    <a href="#t4">4. Insert/Update/Delete</a>
+    <a href="#t5">5. Math Ops</a>
+    <a href="#t6">6. Aggregates</a>
+    <a href="#t7">7. np.unique</a>
+    <a href="#t8">8. Broadcasting</a>
+    <a href="#t9">9. Reshaping</a>
+    <span class="prog" id="prog">0 / 61 solved</span>
+</div></div>
+<main class="wrap">
+<div class="tip"><b>How to use this sheet.</b> Write the code for each requirement and run it. The orange tag on each question shows the style of tech round where this kind of problem shows up. You are already solving real interview-style questions. Let's begin!</div>
+
+<!-- TOPIC 1 -->
+<section id="t1"><div class="thead"><span class="tn">Topic 1</span><h2>Introduction to NumPy Arrays</h2><p class="tsub">Working with ndarray, dimensions, shapes, and types.</p></div>
+
+<article class="q" id="q1"><header><div class="qt"><span class="qn">Q1</span><h3>1D Array Basics</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: TCS</span></div></header>
+<p>Create a one-dimensional NumPy array containing 5, 10, 15, 20, 25. Print its dimensions, shape, data type, and total number of elements.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[ 5 10 15 20 25]
+1
+(5,)
+int64 (or int32)
+5</pre><label class="done"><input type="checkbox" data-q="q1"> I solved this one</label></article>
+
+<article class="q" id="q2"><header><div class="qt"><span class="qn">Q2</span><h3>2D Array (Student Marks)</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: Infosys</span></div></header>
+<p>Create a two-dimensional array representing marks for three students in two subjects:<br>Student 1: 70, 80<br>Student 2: 65, 75<br>Student 3: 90, 85<br>Print the array, its dimensions, its shape, and the total number of elements.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[[70 80]
+ [65 75]
+ [90 85]]
+2
+(3, 2)
+6</pre><label class="done"><input type="checkbox" data-q="q2"> I solved this one</label></article>
+</section>
+
+<!-- TOPIC 2 -->
+<section id="t2"><div class="thead"><span class="tn">Topic 2</span><h2>Array Creation</h2><p class="tsub">zeros, ones, arange, linspace, random</p></div>
+
+<article class="q" id="q3"><header><div class="qt"><span class="qn">Q3</span><h3>Create zeros</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: Wipro</span></div></header>
+<p>Create a NumPy array containing five zeros. All elements must be integers. Print the array and its data type.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[0 0 0 0 0]
+int64 (or int32)</pre><label class="done"><input type="checkbox" data-q="q3"> I solved this one</label></article>
+
+<article class="q" id="q4"><header><div class="qt"><span class="qn">Q4</span><h3>Create a 2D array of ones</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: Accenture</span></div></header>
+<p>Create an array containing three rows and four columns, filled with ones. Use integer data type. Print the array and its shape.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[[1 1 1 1]
+ [1 1 1 1]
+ [1 1 1 1]]
+(3, 4)</pre><label class="done"><input type="checkbox" data-q="q4"> I solved this one</label></article>
+
+<article class="q" id="q5"><header><div class="qt"><span class="qn">Q5</span><h3>Generate a sequence</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Capgemini</span></div></header>
+<p>Use <code>np.arange()</code> to generate all even numbers from 2 to 20, including 20. Do not manually type the numbers. Print the resulting array.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[ 2  4  6  8 10 12 14 16 18 20]</pre><label class="done"><input type="checkbox" data-q="q5"> I solved this one</label></article>
+
+<article class="q" id="q6"><header><div class="qt"><span class="qn">Q6</span><h3>Count backwards</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: LTIMindtree</span></div></header>
+<p>Generate the sequence: <code>[20, 16, 12, 8, 4]</code> using <code>np.arange()</code>.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[20 16 12  8  4]</pre><label class="done"><input type="checkbox" data-q="q6"> I solved this one</label></article>
+
+<article class="q" id="q7"><header><div class="qt"><span class="qn">Q7</span><h3>Equally spaced values</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Cognizant</span></div></header>
+<p>Use <code>np.linspace()</code> to generate exactly six equally spaced values between 0 and 10, including both endpoints. Print the array and count the number of values.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[ 0.  2.  4.  6.  8. 10.]
+6</pre><label class="done"><input type="checkbox" data-q="q7"> I solved this one</label></article>
+
+<article class="q" id="q8"><header><div class="qt"><span class="qn">Q8</span><h3>Random integers</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Tech Mahindra</span></div></header>
+<p>Generate eight random integers between 1 and 50, inclusive. Print the array.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[12 45  7 23 38  2 49 16]   (Note: Your numbers will vary)</pre><label class="done"><input type="checkbox" data-q="q8"> I solved this one</label></article>
+
+<article class="q" id="q9"><header><div class="qt"><span class="qn">Q9</span><h3>Random decimals</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Deloitte</span></div></header>
+<p>Generate a 2D array containing two rows and three columns of random decimal values between 0 and 1. Print the array and its shape.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[[0.23 0.81 0.14]
+ [0.67 0.42 0.56]]  (Note: Your numbers will vary)
+(2, 3)</pre><label class="done"><input type="checkbox" data-q="q9"> I solved this one</label></article>
+
+<article class="q" id="q10"><header><div class="qt"><span class="qn">Q10</span><h3>Predict the output</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: HCLTech</span></div></header>
+<p>Without running the code first, predict the output of:</p>
+<pre>a = np.arange(3, 15, 4)
+print(a)</pre>
+<div class="lbl exp">Expected output</div><pre class="out">[ 3  7 11]</pre><label class="done"><input type="checkbox" data-q="q10"> I solved this one</label></article>
+
+<article class="q" id="q11"><header><div class="qt"><span class="qn">Q11</span><h3>Find the error</h3></div><div class="tags"><span class="lv hard">Hard</span><span class="co">Tech round style: Meta</span></div></header>
+<p>A student writes <code>a = np.zeros(3, 4)</code>. Explain why this code is incorrect and rewrite it to create three rows and four columns of zeros.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[[0 0 0 0]
+ [0 0 0 0]
+ [0 0 0 0]]</pre><label class="done"><input type="checkbox" data-q="q11"> I solved this one</label></article>
+
+<article class="q" id="q12"><header><div class="qt"><span class="qn">Q12</span><h3>Mini challenge: Data Pipeline Mocks</h3></div><div class="tags"><span class="lv challenge">Challenge</span><span class="co">Tech round style: Amazon</span></div></header>
+<p>A bank is testing its transaction-processing pipeline. Create:<br>
+- An array of five zero-initialized transaction flags.<br>
+- An array containing ten consecutive integers from 1 to 10.<br>
+- An array containing five equally spaced values from 100 to 500.<br>
+- An array of five random transaction amounts between ₹100 and ₹1,000, inclusive.<br>
+Print all four arrays.</p>
+<div class="lbl exp">Expected output</div><pre class="out">Flags: [0 0 0 0 0]
+IDs: [ 1  2  3  4  5  6  7  8  9 10]
+Values: [100. 200. 300. 400. 500.]
+Random amounts: [523 105 999 432 750]  (Your random amounts will vary)</pre><label class="done"><input type="checkbox" data-q="q12"> I solved this one</label></article>
+</section>
+
+<!-- TOPIC 3 -->
+<section id="t3"><div class="thead"><span class="tn">Topic 3</span><h2>Array Filtering, Sorting, Slicing, Indexing</h2><p class="tsub">Mini-project challenge — transaction monitoring</p></div>
+
+<article class="q" id="q13"><header><div class="qt"><span class="qn">Q13</span><h3>Transaction Monitoring Pipeline</h3></div><div class="tags"><span class="lv challenge">Challenge</span><span class="co">Tech round style: JPMorgan Chase</span></div></header>
+<p>This challenge combines multiple concepts and feels closer to a real data pipeline. Using the provided array, complete the 6 extraction steps.</p>
+<div class="lbl">Given data</div>
+<pre>transactions = np.array([1200, 450, 3200, 800, 150, 2700, 900, 1800])</pre>
+<ol>
+    <li>Print the third transaction.</li>
+    <li>Extract the first five transactions.</li>
+    <li>Find all transactions greater than 1000.</li>
+    <li>Find all transactions between 500 and 2000, including both limits.</li>
+    <li>Display the transactions in ascending order.</li>
+    <li>Display the three largest transactions.</li>
+</ol>
+<div class="lbl exp">Expected output</div><pre class="out">3200
+[1200  450 3200  800  150]
+[1200 3200 2700 1800]
+[1200  800  900 1800]
+[ 150  450  800  900 1200 1800 2700 3200]
+[3200 2700 1800]</pre><label class="done"><input type="checkbox" data-q="q13"> I solved this one</label></article>
+</section>
+
+<!-- TOPIC 4 -->
+<section id="t4"><div class="thead"><span class="tn">Topic 4</span><h2>Insert, Update, Delete operations</h2><p class="tsub">Mutating and generating new arrays</p>
+<p class="tnote">Use this array for Questions 14–20:<br><code>scores = np.array([65, 78, 82, 90, 55])</code></p></div>
+
+<article class="q" id="q14"><header><div class="qt"><span class="qn">Q14</span><h3>Update an element</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: Zensar</span></div></header>
+<p>Change the first score from 65 to 70.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[70 78 82 90 55]</pre><label class="done"><input type="checkbox" data-q="q14"> I solved this one</label></article>
+
+<article class="q" id="q15"><header><div class="qt"><span class="qn">Q15</span><h3>Update using an index</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: Swiggy</span></div></header>
+<p>Change the score 82 to 88 using its index.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[65 78 88 90 55]</pre><label class="done"><input type="checkbox" data-q="q15"> I solved this one</label></article>
+
+<article class="q" id="q16"><header><div class="qt"><span class="qn">Q16</span><h3>Insert</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Paytm</span></div></header>
+<p>Insert 75 at index 2. Store the result in a new variable called <code>new_scores</code>.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[65 78 75 82 90 55]</pre><label class="done"><input type="checkbox" data-q="q16"> I solved this one</label></article>
+
+<article class="q" id="q17"><header><div class="qt"><span class="qn">Q17</span><h3>Delete</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Flipkart</span></div></header>
+<p>Delete the element at index 0. Store the result in <code>remaining_scores</code>.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[78 82 90 55]</pre><label class="done"><input type="checkbox" data-q="q17"> I solved this one</label></article>
+
+<article class="q" id="q18"><header><div class="qt"><span class="qn">Q18</span><h3>Insert multiple values</h3></div><div class="tags"><span class="lv hard">Hard</span><span class="co">Tech round style: Walmart Global Tech</span></div></header>
+<p>Insert the values 100 and 95 at index 1. What is the resulting array?</p>
+<div class="lbl exp">Expected output</div><pre class="out">[65 100  95  78  82  90  55]</pre><label class="done"><input type="checkbox" data-q="q18"> I solved this one</label></article>
+
+<article class="q" id="q19"><header><div class="qt"><span class="qn">Q19</span><h3>Delete multiple elements</h3></div><div class="tags"><span class="lv hard">Hard</span><span class="co">Tech round style: Google</span></div></header>
+<p>Delete the elements at indices 1 and 3 from the original scores array.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[65 82 55]</pre><label class="done"><input type="checkbox" data-q="q19"> I solved this one</label></article>
+
+<article class="q" id="q20"><header><div class="qt"><span class="qn">Q20</span><h3>Understand the output</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Microsoft</span></div></header>
+<p>What will this code print?</p>
+<pre>scores = np.array([10, 20, 30])
+new_scores = np.insert(scores, 1, 99)
+print(scores)
+print(new_scores)</pre>
+<div class="lbl exp">Expected output</div><pre class="out">[10 20 30]
+[10 99 20 30]</pre><label class="done"><input type="checkbox" data-q="q20"> I solved this one</label></article>
+
+<article class="q" id="q21"><header><div class="qt"><span class="qn">Q21</span><h3>Find and fix the error</h3></div><div class="tags"><span class="lv hard">Hard</span><span class="co">Tech round style: Apple</span></div></header>
+<p>A student writes:<br><code>scores = np.array([10, 20, 30])</code><br><code>scores.insert(1, 99)</code><br>Why does this fail, and how can it be corrected?</p>
+<div class="lbl exp">Expected output</div><pre class="out">[10 99 20 30]</pre><label class="done"><input type="checkbox" data-q="q21"> I solved this one</label></article>
+</section>
+
+<!-- TOPIC 5 -->
+<section id="t5"><div class="thead"><span class="tn">Topic 5</span><h2>Mathematical Operations</h2><p class="tsub">Vectorization at work</p>
+<p class="tnote">Use this array for Questions 22–29:<br><code>prices = np.array([100, 250, 400, 150, 300])</code></p></div>
+
+<article class="q" id="q22"><header><div class="qt"><span class="qn">Q22</span><h3>Addition</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: TCS</span></div></header>
+<p>Increase every price by 20. <i>Hint: Add a scalar to the array.</i></p>
+<div class="lbl exp">Expected output</div><pre class="out">[120 270 420 170 320]</pre><label class="done"><input type="checkbox" data-q="q22"> I solved this one</label></article>
+
+<article class="q" id="q23"><header><div class="qt"><span class="qn">Q23</span><h3>Subtraction</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: Infosys</span></div></header>
+<p>Give a discount of 50 on every price. <i>Hint: Subtract 50 from the array.</i></p>
+<div class="lbl exp">Expected output</div><pre class="out">[ 50 200 350 100 250]</pre><label class="done"><input type="checkbox" data-q="q23"> I solved this one</label></article>
+
+<article class="q" id="q24"><header><div class="qt"><span class="qn">Q24</span><h3>Multiplication</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: Wipro</span></div></header>
+<p>Calculate the price of 3 units of every item.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[ 300  750 1200  450  900]</pre><label class="done"><input type="checkbox" data-q="q24"> I solved this one</label></article>
+
+<article class="q" id="q25"><header><div class="qt"><span class="qn">Q25</span><h3>Division</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: Accenture</span></div></header>
+<p>Calculate half of every price.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[ 50. 125. 200.  75. 150.]</pre><label class="done"><input type="checkbox" data-q="q25"> I solved this one</label></article>
+
+<article class="q" id="q26"><header><div class="qt"><span class="qn">Q26</span><h3>Exponentiation</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Capgemini</span></div></header>
+<p>Calculate the square of each value in <code>np.array([2, 4, 6])</code>.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[ 4 16 36]</pre><label class="done"><input type="checkbox" data-q="q26"> I solved this one</label></article>
+
+<article class="q" id="q27"><header><div class="qt"><span class="qn">Q27</span><h3>Modulus</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: LTIMindtree</span></div></header>
+<p>Find the remainder when each value in <code>np.array([12, 17, 20, 25])</code> is divided by 10.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[2 7 0 5]</pre><label class="done"><input type="checkbox" data-q="q27"> I solved this one</label></article>
+
+<article class="q" id="q28"><header><div class="qt"><span class="qn">Q28</span><h3>Array operations</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Cognizant</span></div></header>
+<p>Add <code>branch_b = np.array([10, 20, 30, 40, 50])</code> to <code>prices</code> element by element.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[110 270 430 190 350]</pre><label class="done"><input type="checkbox" data-q="q28"> I solved this one</label></article>
+
+<article class="q" id="q29"><header><div class="qt"><span class="qn">Q29</span><h3>Square root</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Tech Mahindra</span></div></header>
+<p>Find the square root of each element in <code>np.array([9, 16, 25, 36])</code>. <i>Hint: Use np.sqrt()</i></p>
+<div class="lbl exp">Expected output</div><pre class="out">[3. 4. 5. 6.]</pre><label class="done"><input type="checkbox" data-q="q29"> I solved this one</label></article>
+</section>
+
+<!-- TOPIC 6 -->
+<section id="t6"><div class="thead"><span class="tn">Topic 6</span><h2>Aggregate Operations</h2><p class="tsub">sum, mean, min, max, std</p>
+<p class="tnote">Use this array for Questions 30–37:<br><code>marks = np.array([45, 60, 75, 80, 90, 50])</code></p></div>
+
+<article class="q" id="q30"><header><div class="qt"><span class="qn">Q30</span><h3>Sum</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: Deloitte</span></div></header>
+<p>Calculate the total of all marks.</p>
+<div class="lbl exp">Expected output</div><pre class="out">400</pre><label class="done"><input type="checkbox" data-q="q30"> I solved this one</label></article>
+
+<article class="q" id="q31"><header><div class="qt"><span class="qn">Q31</span><h3>Mean</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: HCLTech</span></div></header>
+<p>Calculate the average marks.</p>
+<div class="lbl exp">Expected output</div><pre class="out">66.66666666666667</pre><label class="done"><input type="checkbox" data-q="q31"> I solved this one</label></article>
+
+<article class="q" id="q32"><header><div class="qt"><span class="qn">Q32</span><h3>Minimum</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: Meta</span></div></header>
+<p>Find the lowest mark.</p>
+<div class="lbl exp">Expected output</div><pre class="out">45</pre><label class="done"><input type="checkbox" data-q="q32"> I solved this one</label></article>
+
+<article class="q" id="q33"><header><div class="qt"><span class="qn">Q33</span><h3>Maximum</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: Amazon</span></div></header>
+<p>Find the highest mark.</p>
+<div class="lbl exp">Expected output</div><pre class="out">90</pre><label class="done"><input type="checkbox" data-q="q33"> I solved this one</label></article>
+
+<article class="q" id="q34"><header><div class="qt"><span class="qn">Q34</span><h3>Standard deviation</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: JPMorgan Chase</span></div></header>
+<p>Calculate the standard deviation of the marks.</p>
+<div class="lbl exp">Expected output</div><pre class="out">16.99673171197595</pre><label class="done"><input type="checkbox" data-q="q34"> I solved this one</label></article>
+
+<article class="q" id="q35"><header><div class="qt"><span class="qn">Q35</span><h3>Combined statistics</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Zensar</span></div></header>
+<p>Print the total, average, minimum and maximum using four print statements.</p>
+<div class="lbl exp">Expected output</div><pre class="out">400
+66.66666666666667
+45
+90</pre><label class="done"><input type="checkbox" data-q="q35"> I solved this one</label></article>
+
+<article class="q" id="q36"><header><div class="qt"><span class="qn">Q36</span><h3>Filtering + aggregation</h3></div><div class="tags"><span class="lv hard">Hard</span><span class="co">Tech round style: Swiggy</span></div></header>
+<p>Find the average of only those marks that are at least 75. <i>Hint: Filter the array first, then calculate the mean.</i></p>
+<div class="lbl exp">Expected output</div><pre class="out">81.66666666666667</pre><label class="done"><input type="checkbox" data-q="q36"> I solved this one</label></article>
+
+<article class="q" id="q37"><header><div class="qt"><span class="qn">Q37</span><h3>2D aggregation</h3></div><div class="tags"><span class="lv hard">Hard</span><span class="co">Tech round style: Paytm</span></div></header>
+<p>For <code>sales = np.array([[10,20,30],[40,50,60]])</code>, calculate the sum of each row and then each column. <i>Hint: Try axis=1 and axis=0.</i></p>
+<div class="lbl exp">Expected output</div><pre class="out">[ 60 150]
+[50 70 90]</pre><label class="done"><input type="checkbox" data-q="q37"> I solved this one</label></article>
+</section>
+
+<!-- TOPIC 7 -->
+<section id="t7"><div class="thead"><span class="tn">Topic 7</span><h2>np.unique — deduplication</h2><p class="tsub">Finding unique elements and frequencies</p></div>
+
+<article class="q" id="q38"><header><div class="qt"><span class="qn">Q38</span><h3>Basic unique values</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: Flipkart</span></div></header>
+<p>Given <code>numbers = np.array([10, 20, 10, 30, 20, 40])</code>, print the unique values.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[10 20 30 40]</pre><label class="done"><input type="checkbox" data-q="q38"> I solved this one</label></article>
+
+<article class="q" id="q39"><header><div class="qt"><span class="qn">Q39</span><h3>Count unique values</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: Walmart Global Tech</span></div></header>
+<p>Using the same array, find how many distinct values exist. <i>Hint: Try .size on the result.</i></p>
+<div class="lbl exp">Expected output</div><pre class="out">4</pre><label class="done"><input type="checkbox" data-q="q39"> I solved this one</label></article>
+
+<article class="q" id="q40"><header><div class="qt"><span class="qn">Q40</span><h3>Strings</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Google</span></div></header>
+<p>Find the unique departments in <code>np.array(['IT', 'HR', 'IT', 'Sales', 'HR'])</code>.</p>
+<div class="lbl exp">Expected output</div><pre class="out">['HR' 'IT' 'Sales']</pre><label class="done"><input type="checkbox" data-q="q40"> I solved this one</label></article>
+
+<article class="q" id="q41"><header><div class="qt"><span class="qn">Q41</span><h3>Frequency counts</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Microsoft</span></div></header>
+<p>For <code>scores = np.array([50, 60, 50, 70, 60, 50])</code>, display each unique score and its frequency.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[50 60 70]
+[3 2 1]</pre><label class="done"><input type="checkbox" data-q="q41"> I solved this one</label></article>
+
+<article class="q" id="q42"><header><div class="qt"><span class="qn">Q42</span><h3>Predict the output</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Apple</span></div></header>
+<p>What will <code>np.unique(np.array([5, 3, 5, 2, 3]))</code> return?</p>
+<div class="lbl exp">Expected output</div><pre class="out">[2 3 5]</pre><label class="done"><input type="checkbox" data-q="q42"> I solved this one</label></article>
+
+<article class="q" id="q43"><header><div class="qt"><span class="qn">Q43</span><h3>Understand the original array</h3></div><div class="tags"><span class="lv hard">Hard</span><span class="co">Tech round style: TCS</span></div></header>
+<p>After <code>unique_values = np.unique(numbers)</code>, print <code>numbers</code>. Does it change?</p>
+<div class="lbl exp">Expected output</div><pre class="out">[10 20 10 30 20 40]</pre><label class="done"><input type="checkbox" data-q="q43"> I solved this one</label></article>
+
+<article class="q" id="q44"><header><div class="qt"><span class="qn">Q44</span><h3>Business use case</h3></div><div class="tags"><span class="lv hard">Hard</span><span class="co">Tech round style: Infosys</span></div></header>
+<p>A store records products as <code>np.array(['Pen', 'Book', 'Pen', 'Bag', 'Book', 'Pen'])</code>. Print unique products and their counts.</p>
+<div class="lbl exp">Expected output</div><pre class="out">['Bag' 'Book' 'Pen']
+[1 2 3]</pre><label class="done"><input type="checkbox" data-q="q44"> I solved this one</label></article>
+
+<article class="q" id="q45"><header><div class="qt"><span class="qn">Q45</span><h3>Challenge</h3></div><div class="tags"><span class="lv challenge">Challenge</span><span class="co">Tech round style: Amazon</span></div></header>
+<p>Find the unique values and frequency counts for <code>np.array([100, 200, 100, 300, 200, 100, 400])</code>.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[100 200 300 400]
+[3 2 1 1]</pre><label class="done"><input type="checkbox" data-q="q45"> I solved this one</label></article>
+</section>
+
+<!-- TOPIC 8 -->
+<section id="t8"><div class="thead"><span class="tn">Topic 8</span><h2>Broadcasting</h2><p class="tsub">Operations on arrays of different shapes</p></div>
+
+<article class="q" id="q46"><header><div class="qt"><span class="qn">Q46</span><h3>Scalar broadcasting</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: Wipro</span></div></header>
+<p>What is the output of <code>np.array([5, 10, 15]) + 2</code>?</p>
+<div class="lbl exp">Expected output</div><pre class="out">[ 7 12 17]</pre><label class="done"><input type="checkbox" data-q="q46"> I solved this one</label></article>
+
+<article class="q" id="q47"><header><div class="qt"><span class="qn">Q47</span><h3>Same-shape arrays</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: Accenture</span></div></header>
+<p>Calculate the element-wise product of <code>a = np.array([2, 3, 4])</code> and <code>b = np.array([10, 20, 30])</code>.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[ 20  60 120]</pre><label class="done"><input type="checkbox" data-q="q47"> I solved this one</label></article>
+
+<article class="q" id="q48"><header><div class="qt"><span class="qn">Q48</span><h3>2D and 1D arrays</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Capgemini</span></div></header>
+<p>Add <code>[10, 20, 30]</code> to each row of <code>np.array([[1, 2, 3], [4, 5, 6]])</code>.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[[11 22 33]
+ [14 25 36]]</pre><label class="done"><input type="checkbox" data-q="q48"> I solved this one</label></article>
+
+<article class="q" id="q49"><header><div class="qt"><span class="qn">Q49</span><h3>Broadcasting rules</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: LTIMindtree</span></div></header>
+<p>Will shapes <code>(4, 3)</code> and <code>(3,)</code> work together? Explain why.</p>
+<div class="lbl exp">Expected output</div><pre class="out">Yes, they are compatible.</pre><label class="done"><input type="checkbox" data-q="q49"> I solved this one</label></article>
+
+<article class="q" id="q50"><header><div class="qt"><span class="qn">Q50</span><h3>Find the error</h3></div><div class="tags"><span class="lv hard">Hard</span><span class="co">Tech round style: Cognizant</span></div></header>
+<p>Why does adding arrays with shapes <code>(3,)</code> and <code>(2,)</code> fail?</p>
+<div class="lbl exp">Expected output</div><pre class="out">ValueError: operands could not be broadcast together</pre><label class="done"><input type="checkbox" data-q="q50"> I solved this one</label></article>
+
+<article class="q" id="q51"><header><div class="qt"><span class="qn">Q51</span><h3>Column broadcasting</h3></div><div class="tags"><span class="lv hard">Hard</span><span class="co">Tech round style: Tech Mahindra</span></div></header>
+<p>Add <code>np.array([[100], [200]])</code> to <code>np.array([[1, 2, 3], [4, 5, 6]])</code>.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[[101 102 103]
+ [204 205 206]]</pre><label class="done"><input type="checkbox" data-q="q51"> I solved this one</label></article>
+
+<article class="q" id="q52"><header><div class="qt"><span class="qn">Q52</span><h3>Shape prediction</h3></div><div class="tags"><span class="lv hard">Hard</span><span class="co">Tech round style: Deloitte</span></div></header>
+<p>What is the result shape when an array of shape <code>(2, 3)</code> is multiplied by an array of shape <code>(1, 3)</code>?</p>
+<div class="lbl exp">Expected output</div><pre class="out">(2, 3)</pre><label class="done"><input type="checkbox" data-q="q52"> I solved this one</label></article>
+
+<article class="q" id="q53"><header><div class="qt"><span class="qn">Q53</span><h3>Business challenge</h3></div><div class="tags"><span class="lv challenge">Challenge</span><span class="co">Tech round style: JPMorgan Chase</span></div></header>
+<p>Three product prices are <code>[100, 200, 300]</code>. Apply discounts of 10%, 20% and 5%, respectively. Calculate the final prices.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[ 90. 160. 285.]</pre><label class="done"><input type="checkbox" data-q="q53"> I solved this one</label></article>
+</section>
+
+<!-- TOPIC 9 -->
+<section id="t9"><div class="thead"><span class="tn">Topic 9</span><h2>Reshaping, stacking, splitting arrays</h2><p class="tsub">Modifying structural dimensions</p></div>
+
+<article class="q" id="q54"><header><div class="qt"><span class="qn">Q54</span><h3>Reshape</h3></div><div class="tags"><span class="lv easy">Easy</span><span class="co">Tech round style: HCLTech</span></div></header>
+<p>Reshape <code>np.array([1, 2, 3, 4, 5, 6])</code> into 2 rows and 3 columns.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[[1 2 3]
+ [4 5 6]]</pre><label class="done"><input type="checkbox" data-q="q54"> I solved this one</label></article>
+
+<article class="q" id="q55"><header><div class="qt"><span class="qn">Q55</span><h3>Reshape with -1</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Meta</span></div></header>
+<p>Reshape eight elements into two rows, allowing NumPy to calculate the number of columns. <i>Hint: Use .reshape(2, -1)</i></p>
+<div class="lbl exp">Expected output</div><pre class="out">[[1 2 3 4]
+ [5 6 7 8]]</pre><label class="done"><input type="checkbox" data-q="q55"> I solved this one</label></article>
+
+<article class="q" id="q56"><header><div class="qt"><span class="qn">Q56</span><h3>Find the error</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Amazon</span></div></header>
+<p>Why does <code>np.array([1, 2, 3, 4, 5, 6]).reshape(4, 2)</code> fail?</p>
+<div class="lbl exp">Expected output</div><pre class="out">ValueError: cannot reshape array of size 6 into shape (4,2)</pre><label class="done"><input type="checkbox" data-q="q56"> I solved this one</label></article>
+
+<article class="q" id="q57"><header><div class="qt"><span class="qn">Q57</span><h3>Vertical stacking</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Zensar</span></div></header>
+<p>Combine <code>[1, 2, 3]</code> and <code>[4, 5, 6]</code> as two rows using <code>np.vstack()</code>.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[[1 2 3]
+ [4 5 6]]</pre><label class="done"><input type="checkbox" data-q="q57"> I solved this one</label></article>
+
+<article class="q" id="q58"><header><div class="qt"><span class="qn">Q58</span><h3>Horizontal stacking</h3></div><div class="tags"><span class="lv medium">Medium</span><span class="co">Tech round style: Swiggy</span></div></header>
+<p>Join <code>[10, 20]</code> and <code>[30, 40]</code> into one 1D array using <code>np.hstack()</code>.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[10 20 30 40]</pre><label class="done"><input type="checkbox" data-q="q58"> I solved this one</label></article>
+
+<article class="q" id="q59"><header><div class="qt"><span class="qn">Q59</span><h3>Splitting</h3></div><div class="tags"><span class="lv hard">Hard</span><span class="co">Tech round style: Paytm</span></div></header>
+<p>Split <code>[10, 20, 30, 40, 50, 60]</code> into three equal parts.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[array([10, 20]), array([30, 40]), array([50, 60])]</pre><label class="done"><input type="checkbox" data-q="q59"> I solved this one</label></article>
+
+<article class="q" id="q60"><header><div class="qt"><span class="qn">Q60</span><h3>Unequal splitting</h3></div><div class="tags"><span class="lv hard">Hard</span><span class="co">Tech round style: Flipkart</span></div></header>
+<p>Divide <code>[1, 2, 3, 4, 5]</code> into three parts, allowing unequal sizes. <i>Hint: np.array_split()</i></p>
+<div class="lbl exp">Expected output</div><pre class="out">[array([1, 2]), array([3, 4]), array([5])]</pre><label class="done"><input type="checkbox" data-q="q60"> I solved this one</label></article>
+
+<article class="q" id="q61"><header><div class="qt"><span class="qn">Q61</span><h3>2D stacking</h3></div><div class="tags"><span class="lv challenge">Challenge</span><span class="co">Tech round style: Google</span></div></header>
+<p>Given <code>a = np.array([[1, 2], [3, 4]])</code> and <code>b = np.array([[5, 6], [7, 8]])</code>, stack them horizontally.</p>
+<div class="lbl exp">Expected output</div><pre class="out">[[1 2 5 6]
+ [3 4 7 8]]</pre><label class="done"><input type="checkbox" data-q="q61"> I solved this one</label></article>
+</section>
+</main>
+<footer><div class="wrap">Company tags show the typical round style and level, not verbatim questions from those companies.<br>Module 9 · NumPy Numerical Computing</div></footer>
+<script>
+(function(){
+var boxes=document.querySelectorAll('input[data-q]'),KEY='m9-solved',saved={};
+try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+function upd(){var c=0;boxes.forEach(function(b){if(b.checked)c++});document.getElementById('prog').textContent=c+' / '+boxes.length+' solved'}
+boxes.forEach(function(b){b.checked=!!saved[b.dataset.q];b.addEventListener('change',function(){saved[b.dataset.q]=b.checked;try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){};upd()})});
+upd();
+})();
+</script></body></html>
+```eof
+
+http://googleusercontent.com/immersive_entry_chip/0
+
+The `.html` file is built using the provided styles and perfectly aligns the 61 questions under their respective topics, complete with company tech-round tags for motivation. The `.md` file is cleanly formatted containing the complete answers and explanations to distribute to your students! Let me know if you need any adjustments.
